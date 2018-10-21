@@ -12,13 +12,9 @@ public class TimeZoneTranslator {
 		int year = inputDate.getYear();
 		int month = inputDate.getMonth();
 		int day = inputDate.getDay();
-		int hour = inputDate.getHour();
 		
-		hour = targetHour;
-		
-		if(hour < 0 ) {
-			hour = 24 + (hour);
-			hour= hour %24;
+		if(targetHour < 0 ) {
+			targetHour = 24 + (targetHour);
 			day--;
 			if(day < 1) {
 				month--;
@@ -27,11 +23,10 @@ public class TimeZoneTranslator {
 					year--;
 					month = 12;
 				}
-			}	
-		}
-		if(hour > 23) {
-			hour = hour % 24;
-			hour = 0 + hour;		
+			}
+		}	else if(targetHour > 23) {
+			targetHour = targetHour % 24;
+			targetHour = 0 + targetHour;		
 			day++;
 			if(day > 31) {
 				month++;
@@ -47,7 +42,7 @@ public class TimeZoneTranslator {
 		DateTime targetDateTime = new DateTime(year,
 				month,
 				day,
-				hour,
+				targetHour,
 				inputDate.getMinute(),
 				inputDate.getSecond());
 		
