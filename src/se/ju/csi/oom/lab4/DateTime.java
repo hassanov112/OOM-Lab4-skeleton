@@ -13,7 +13,7 @@ public class DateTime {
 	private int second;
 	
 	public String toString() {
-		return String.format("%04d-%02d-%02d %02d:%02d%02d", year, month, day, hour, minute, second);
+		return String.format("%04d-%02d-%02d %02d:%02d:%02d", year, month, day, hour, minute, second);
 	}
 	
 	public DateTime(int year, int month, int day, int hour, int minute, int second) {
@@ -26,7 +26,7 @@ public class DateTime {
 	}
 
 	public DateTime(String dateString) {
-		Pattern p = Pattern.compile("(\\d\\d\\d\\d)-(\\d\\d)-(\\d\\d) (\\d\\d):(\\d\\d)(\\d\\d)");
+		Pattern p = Pattern.compile("(\\d\\d\\d\\d)-(\\d\\d)-(\\d\\d) (\\d\\d):(\\d\\d):(\\d\\d)");
 		Matcher m = p.matcher(dateString);
 		m.find();
 		this.year = Integer.parseInt(m.group(1));
