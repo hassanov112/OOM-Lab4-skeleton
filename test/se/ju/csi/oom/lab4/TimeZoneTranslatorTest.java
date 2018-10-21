@@ -28,11 +28,7 @@ public class TimeZoneTranslatorTest {
 		
 		assertEquals(expectedTime.toString(), translatedTime.toString());
 		System.out.println(translatedTime.toString());
-		
 	}
-
-	
-	
 	
 	@Test
 	public void testShiftEventTimeZone() {
